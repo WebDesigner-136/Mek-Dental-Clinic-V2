@@ -32,16 +32,26 @@ function Home() {
       {/* HERO */}
       <section className="relative min-h-[100dvh] overflow-hidden">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+          {/* Reference photo as hero backdrop */}
           <div
-            className="absolute -right-32 -top-32 h-[520px] w-[520px] rounded-full opacity-40 blur-3xl"
-            style={{ background: "radial-gradient(circle at 35% 30%, #6d767d 0%, transparent 65%)" }}
+            className="absolute inset-0 bg-cover bg-center hero-image-breathe"
+            style={{ backgroundImage: `url(${heroSmile.url})` }}
+          />
+          {/* Readability gradient overlay (preserves original tone, just adds depth on the left) */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(20,20,22,0.78) 0%, rgba(20,20,22,0.55) 40%, rgba(20,20,22,0.15) 70%, rgba(20,20,22,0) 100%)",
+            }}
           />
           <div
-            className="absolute -left-40 top-1/3 h-[420px] w-[420px] rounded-full opacity-30 blur-3xl"
-            style={{ background: "radial-gradient(circle at 50% 50%, #323232 0%, transparent 60%)" }}
+            className="absolute -left-40 top-1/3 h-[420px] w-[420px] rounded-full opacity-25 blur-3xl"
+            style={{ background: "radial-gradient(circle at 50% 50%, #6d767d 0%, transparent 60%)" }}
           />
           <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[color:var(--color-canvas)] to-transparent" />
         </div>
+
 
 
         <div className="container-edge flex min-h-[100dvh] flex-col justify-center pb-20 pt-6">
