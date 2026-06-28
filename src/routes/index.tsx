@@ -8,7 +8,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ImageFrame } from "@/components/ImageFrame";
-import { ToothCanvas3D } from "@/components/ToothCanvas3D";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,11 +30,17 @@ function Home() {
       {/* HERO */}
       <section className="relative min-h-[100dvh] overflow-hidden">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -right-40 -top-40 h-[640px] w-[640px] opacity-90">
-            <ToothCanvas3D className="h-full w-full" />
-          </div>
+          <div
+            className="absolute -right-32 -top-32 h-[520px] w-[520px] rounded-full opacity-40 blur-3xl"
+            style={{ background: "radial-gradient(circle at 35% 30%, #6d767d 0%, transparent 65%)" }}
+          />
+          <div
+            className="absolute -left-40 top-1/3 h-[420px] w-[420px] rounded-full opacity-30 blur-3xl"
+            style={{ background: "radial-gradient(circle at 50% 50%, #323232 0%, transparent 60%)" }}
+          />
           <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[color:var(--color-canvas)] to-transparent" />
         </div>
+
 
         <div className="container-edge flex min-h-[100dvh] flex-col justify-center pb-20 pt-6">
           <Reveal>
