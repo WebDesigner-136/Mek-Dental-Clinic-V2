@@ -18,9 +18,10 @@
   --color-ink-muted: #6d767d;       /* 18px+ only */
   --color-ink-muted-sm: #565f66;    /* AA-safe for <18px */
 
-  --color-accent: #3f6b63;
-  --color-accent-light: #4a7c74;
-  --color-accent-dark: #2c4e48;
+  --color-accent: #323232;
+  --color-accent-light: #6d767d;
+  --color-accent-dark: #1a1a1a;
+
 
   --color-success: #10b981;
   --color-warn: #c97b63;            /* terracotta — replaces red */
