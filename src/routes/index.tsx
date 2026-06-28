@@ -310,11 +310,22 @@ function Home() {
   );
 }
 
-function Trust({ label, value, mono = true }: { label: string; value: string; mono?: boolean }) {
+function TrustStat({
+  label,
+  children,
+  mono = true,
+}: {
+  label: string;
+  children: React.ReactNode;
+  mono?: boolean;
+}) {
   return (
     <div>
-      <p className={`${mono ? "font-mono" : "font-display"} text-2xl font-semibold tracking-tight sm:text-3xl`}>{value}</p>
-      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-muted-sm)]">{label}</p>
+      <p className={`${mono ? "font-mono" : "font-display"} text-2xl font-semibold tracking-tight text-white sm:text-3xl`}>
+        {children}
+      </p>
+      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/60">{label}</p>
     </div>
   );
 }
+
