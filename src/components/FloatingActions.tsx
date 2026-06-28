@@ -51,12 +51,13 @@ export function FloatingActions() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Book via WhatsApp"
-        className="relative grid h-14 w-14 place-items-center rounded-full bg-[color:var(--color-accent)] text-white shadow-[0_15px_40px_-10px_rgba(63,107,99,0.55)] transition-transform duration-500 [transition-timing-function:var(--ease-house)] hover:scale-105 active:scale-95"
+        className="relative grid h-14 w-14 place-items-center rounded-full text-white shadow-[0_15px_40px_-10px_rgba(37,211,102,0.55)] transition-transform duration-500 [transition-timing-function:var(--ease-house)] hover:scale-105 active:scale-95"
+        style={{ backgroundColor: "#25D366" }}
       >
         <span
           aria-hidden
-          className="no-motion pointer-events-none absolute inset-0 rounded-full bg-[color:var(--color-accent)]"
-          style={{ animation: "pulse-ring 2.4s var(--ease-house) infinite" }}
+          className="no-motion pointer-events-none absolute inset-0 rounded-full"
+          style={{ backgroundColor: "#25D366", animation: "pulse-ring 2.4s var(--ease-house) infinite" }}
         />
         <WhatsAppGlyph className="relative h-7 w-7" />
       </a>
