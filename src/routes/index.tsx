@@ -325,11 +325,12 @@ function TrustStat({
 }) {
   return (
     <div>
-      <p className={`${mono ? "font-mono" : "font-display"} text-2xl font-semibold tracking-tight text-white sm:text-3xl`}>
+      <p className={`${mono ? "font-mono" : "font-display"} text-2xl font-semibold tracking-tight text-[color:var(--color-ink)] sm:text-3xl`}>
         {children}
       </p>
-      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/60">{label}</p>
+      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-muted-sm)]">{label}</p>
     </div>
   );
+
 }
 
