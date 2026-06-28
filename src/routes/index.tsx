@@ -8,6 +8,8 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ImageFrame } from "@/components/ImageFrame";
+import { CountUp } from "@/components/CountUp";
+import heroSmile from "@/assets/hero-smile.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
