@@ -23,7 +23,8 @@ const sizes = {
 
 const variants = {
   primary:
-    "bg-[color:var(--color-accent)] text-white hover:bg-[color:var(--color-accent-dark)] shadow-[0_10px_30px_-12px_rgba(63,107,99,0.55)]",
+    "bg-[color:var(--color-accent)] text-white hover:bg-[color:var(--color-accent-dark)] shadow-[0_10px_30px_-12px_rgba(50,50,50,0.55)]",
+
   ghost:
     "bg-transparent text-[color:var(--color-ink)] hover:bg-[color:var(--color-canvas-alt)] hairline",
   outline:
