@@ -1,3 +1,4 @@
+import type * as React from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Sparkles, Star } from "lucide-react";
 import { CLINIC, HOME_FAQ, HOW_IT_WORKS, SERVICES, WHY_US, GALLERY_CASES } from "@/lib/site";
@@ -8,6 +9,8 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ImageFrame } from "@/components/ImageFrame";
+import { CountUp } from "@/components/CountUp";
+import heroSmile from "@/assets/hero-smile.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -30,30 +33,40 @@ function Home() {
       {/* HERO */}
       <section className="relative min-h-[100dvh] overflow-hidden">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+          {/* Reference photo as hero backdrop */}
           <div
-            className="absolute -right-32 -top-32 h-[520px] w-[520px] rounded-full opacity-40 blur-3xl"
-            style={{ background: "radial-gradient(circle at 35% 30%, #6d767d 0%, transparent 65%)" }}
+            className="absolute inset-0 bg-cover bg-center hero-image-breathe"
+            style={{ backgroundImage: `url(${heroSmile.url})` }}
+          />
+          {/* Readability gradient overlay (preserves original tone, just adds depth on the left) */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(20,20,22,0.78) 0%, rgba(20,20,22,0.55) 40%, rgba(20,20,22,0.15) 70%, rgba(20,20,22,0) 100%)",
+            }}
           />
           <div
-            className="absolute -left-40 top-1/3 h-[420px] w-[420px] rounded-full opacity-30 blur-3xl"
-            style={{ background: "radial-gradient(circle at 50% 50%, #323232 0%, transparent 60%)" }}
+            className="absolute -left-40 top-1/3 h-[420px] w-[420px] rounded-full opacity-25 blur-3xl"
+            style={{ background: "radial-gradient(circle at 50% 50%, #6d767d 0%, transparent 60%)" }}
           />
           <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[color:var(--color-canvas)] to-transparent" />
         </div>
 
 
-        <div className="container-edge flex min-h-[100dvh] flex-col justify-center pb-20 pt-6">
+
+        <div className="container-edge relative flex min-h-[100dvh] flex-col justify-center pb-20 pt-6 text-white">
           <Reveal>
-            <Eyebrow>
+            <Eyebrow className="text-white/75 [&_*]:text-white/75">
               <Sparkles strokeWidth={1.5} className="h-3.5 w-3.5" />
               ENDODONTIC & COSMETIC DENTISTRY · HADATH, BAABDA
             </Eyebrow>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="h-display mt-7 max-w-4xl">Hiding Your Smile Stops Today.</h1>
+            <h1 className="h-display mt-7 max-w-4xl text-white">Hiding Your Smile Stops Today.</h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="serif-accent mt-6 max-w-2xl text-2xl leading-snug text-[color:var(--color-ink-muted)] sm:text-3xl">
+            <p className="serif-accent mt-6 max-w-2xl text-2xl leading-snug text-white/85 sm:text-3xl">
               Painless precision, a calm clinic, and a doctor who explains every step — so the only thing left to feel is confident.
             </p>
           </Reveal>
@@ -68,17 +81,26 @@ function Home() {
             </div>
           </Reveal>
 
-          {/* Trust strip */}
+          {/* Trust strip — animated counters */}
           <Reveal delay={0.32}>
-            <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-[color:var(--color-hairline)] pt-8 sm:grid-cols-4">
-              <Trust label="Google Rating" value="5.0★" />
-              <Trust label="Happy Patients" value="59+" />
-              <Trust label="Founded" value="2022" />
-              <Trust label="Location" value="Hadath, Baabda" mono={false} />
+            <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-white/15 pt-8 sm:grid-cols-4">
+              <TrustStat label="Google Rating">
+                <CountUp value={5} duration={1400} suffix=".0★" />
+              </TrustStat>
+              <TrustStat label="Happy Patients">
+                <CountUp value={59} duration={1800} suffix="+" />
+              </TrustStat>
+              <TrustStat label="Founded">
+                <CountUp value={2022} duration={2200} />
+              </TrustStat>
+              <TrustStat label="Location" mono={false}>
+                Hadath, Baabda
+              </TrustStat>
             </div>
           </Reveal>
         </div>
       </section>
+
 
       {/* ABOUT TEASER */}
       <section className="section-pad bg-[color:var(--color-canvas-alt)]/60">
@@ -289,11 +311,22 @@ function Home() {
   );
 }
 
-function Trust({ label, value, mono = true }: { label: string; value: string; mono?: boolean }) {
+function TrustStat({
+  label,
+  children,
+  mono = true,
+}: {
+  label: string;
+  children: React.ReactNode;
+  mono?: boolean;
+}) {
   return (
     <div>
-      <p className={`${mono ? "font-mono" : "font-display"} text-2xl font-semibold tracking-tight sm:text-3xl`}>{value}</p>
-      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-muted-sm)]">{label}</p>
+      <p className={`${mono ? "font-mono" : "font-display"} text-2xl font-semibold tracking-tight text-white sm:text-3xl`}>
+        {children}
+      </p>
+      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/60">{label}</p>
     </div>
   );
 }
+
