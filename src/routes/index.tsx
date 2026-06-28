@@ -31,7 +31,7 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[100dvh] overflow-hidden">
+      <section className="relative -mt-24 min-h-[100dvh] overflow-hidden sm:-mt-28">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
           {/* Reference photo as hero backdrop */}
           <div
@@ -50,12 +50,10 @@ function Home() {
             className="absolute -left-40 top-1/3 h-[420px] w-[420px] rounded-full opacity-25 blur-3xl"
             style={{ background: "radial-gradient(circle at 50% 50%, #6d767d 0%, transparent 60%)" }}
           />
-          <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[color:var(--color-canvas)] to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[color:var(--color-canvas)] to-transparent" />
         </div>
 
-
-
-        <div className="container-edge relative flex min-h-[100dvh] flex-col justify-center pb-20 pt-6 text-white">
+        <div className="container-edge relative flex min-h-[100dvh] flex-col justify-center pb-24 pt-32 text-white sm:pt-36">
           <Reveal>
             <Eyebrow className="text-white/75 [&_*]:text-white/75">
               <Sparkles strokeWidth={1.5} className="h-3.5 w-3.5" />
@@ -75,15 +73,19 @@ function Home() {
               <LinkButton href={CLINIC.whatsapp} target="_blank" rel="noopener noreferrer" size="lg">
                 Book Appointment
               </LinkButton>
-              <LinkButton href={`tel:${CLINIC.phoneTel}`} variant="outline" size="lg">
-                Call {CLINIC.phoneShort}
-              </LinkButton>
+              <RouterButton to="/services" variant="outline" size="lg">
+                View Our Services
+              </RouterButton>
             </div>
           </Reveal>
+        </div>
+      </section>
 
-          {/* Trust strip — animated counters */}
-          <Reveal delay={0.32}>
-            <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-white/15 pt-8 sm:grid-cols-4">
+      {/* TRUST STRIP — revealed on scroll */}
+      <section className="border-b border-[color:var(--color-hairline)] bg-[color:var(--color-canvas)]">
+        <div className="container-edge py-10 sm:py-14">
+          <Reveal>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4">
               <TrustStat label="Google Rating">
                 <CountUp value={5} duration={1400} suffix=".0★" />
               </TrustStat>
@@ -100,6 +102,7 @@ function Home() {
           </Reveal>
         </div>
       </section>
+
 
 
       {/* ABOUT TEASER */}
