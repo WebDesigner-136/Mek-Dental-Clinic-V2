@@ -1,3 +1,4 @@
+import type * as React from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Sparkles, Star } from "lucide-react";
 import { CLINIC, HOME_FAQ, HOW_IT_WORKS, SERVICES, WHY_US, GALLERY_CASES } from "@/lib/site";
