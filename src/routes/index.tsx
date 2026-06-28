@@ -8,7 +8,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ImageFrame } from "@/components/ImageFrame";
-import { ToothCanvas3D } from "@/components/ToothCanvas3D";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
