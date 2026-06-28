@@ -54,18 +54,18 @@ function Home() {
 
 
 
-        <div className="container-edge flex min-h-[100dvh] flex-col justify-center pb-20 pt-6">
+        <div className="container-edge relative flex min-h-[100dvh] flex-col justify-center pb-20 pt-6 text-white">
           <Reveal>
-            <Eyebrow>
+            <Eyebrow className="text-white/75 [&_*]:text-white/75">
               <Sparkles strokeWidth={1.5} className="h-3.5 w-3.5" />
               ENDODONTIC & COSMETIC DENTISTRY · HADATH, BAABDA
             </Eyebrow>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="h-display mt-7 max-w-4xl">Hiding Your Smile Stops Today.</h1>
+            <h1 className="h-display mt-7 max-w-4xl text-white">Hiding Your Smile Stops Today.</h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="serif-accent mt-6 max-w-2xl text-2xl leading-snug text-[color:var(--color-ink-muted)] sm:text-3xl">
+            <p className="serif-accent mt-6 max-w-2xl text-2xl leading-snug text-white/85 sm:text-3xl">
               Painless precision, a calm clinic, and a doctor who explains every step — so the only thing left to feel is confident.
             </p>
           </Reveal>
@@ -80,17 +80,26 @@ function Home() {
             </div>
           </Reveal>
 
-          {/* Trust strip */}
+          {/* Trust strip — animated counters */}
           <Reveal delay={0.32}>
-            <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-[color:var(--color-hairline)] pt-8 sm:grid-cols-4">
-              <Trust label="Google Rating" value="5.0★" />
-              <Trust label="Happy Patients" value="59+" />
-              <Trust label="Founded" value="2022" />
-              <Trust label="Location" value="Hadath, Baabda" mono={false} />
+            <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-white/15 pt-8 sm:grid-cols-4">
+              <TrustStat label="Google Rating">
+                <CountUp value={5} duration={1400} suffix=".0★" />
+              </TrustStat>
+              <TrustStat label="Happy Patients">
+                <CountUp value={59} duration={1800} suffix="+" />
+              </TrustStat>
+              <TrustStat label="Founded">
+                <CountUp value={2022} duration={2200} />
+              </TrustStat>
+              <TrustStat label="Location" mono={false}>
+                Hadath, Baabda
+              </TrustStat>
             </div>
           </Reveal>
         </div>
       </section>
+
 
       {/* ABOUT TEASER */}
       <section className="section-pad bg-[color:var(--color-canvas-alt)]/60">
