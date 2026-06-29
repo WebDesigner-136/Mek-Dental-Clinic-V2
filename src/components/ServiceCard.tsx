@@ -6,6 +6,7 @@ import type { Service } from "@/lib/site";
 import { Shell, Core } from "./Primitives";
 import { ServiceIcon } from "./ServiceIcon";
 import { ImageFrame } from "./ImageFrame";
+import { SERVICE_IMAGES } from "@/lib/images";
 
 export function ServiceCard({ service }: { service: Service }) {
   return (
