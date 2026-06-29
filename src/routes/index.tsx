@@ -221,7 +221,7 @@ function Home() {
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-5">
             <Reveal>
-              <Shell><Core><ImageFrame label="Dr. Mariana Karam — portrait" iconKey="smile" className="aspect-[4/5]" rounded="rounded-[calc(2rem-0.5rem)]" /></Core></Shell>
+              <Shell><Core><ImageFrame label="Dr. Mariana Karam — portrait" iconKey="smile" className="aspect-[4/5]" rounded="rounded-[calc(2rem-0.5rem)]" src={SECTION_IMAGES.doctorPortrait} /></Core></Shell>
             </Reveal>
           </div>
           <div className="lg:col-span-7">
