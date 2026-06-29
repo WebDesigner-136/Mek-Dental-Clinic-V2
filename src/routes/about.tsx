@@ -123,7 +123,7 @@ function About() {
             {Array.from({ length: 6 }).map((_, i) => (
               <Reveal key={i} delay={(i % 6) * 0.04}>
                 <div className="group relative aspect-square overflow-hidden rounded-2xl border border-[color:var(--color-hairline)]">
-                  <ImageFrame label="Instagram Post" iconKey="smile" className="h-full w-full" rounded="rounded-none" />
+                  <ImageFrame label="Instagram Post" iconKey="smile" className="h-full w-full" rounded="rounded-none" src={INSTAGRAM_IMAGES[i % INSTAGRAM_IMAGES.length]} />
                   <div className="absolute inset-0 grid place-items-center bg-[color:var(--color-ink)]/0 opacity-0 transition-all duration-500 group-hover:bg-[color:var(--color-ink)]/40 group-hover:opacity-100">
                     <Instagram strokeWidth={1.5} className="h-5 w-5 text-white" />
                   </div>
