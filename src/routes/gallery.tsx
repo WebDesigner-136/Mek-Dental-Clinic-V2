@@ -5,6 +5,7 @@ import { Eyebrow, SectionHeader, Shell, Core } from "@/components/Primitives";
 import { LinkButton } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import { GALLERY_IMAGES } from "@/lib/images";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
