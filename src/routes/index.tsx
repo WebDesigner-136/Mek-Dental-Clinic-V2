@@ -127,7 +127,7 @@ function Home() {
           </div>
           <div className="lg:col-span-5">
             <Reveal delay={0.1}>
-              <Shell><Core><ImageFrame label="Mek Dental Clinic — interior, calm modern space" iconKey="sparkles" className="aspect-[4/5]" rounded="rounded-[calc(2rem-0.5rem)]" /></Core></Shell>
+              <Shell><Core><ImageFrame label="Mek Dental Clinic — interior, calm modern space" iconKey="sparkles" className="aspect-[4/5]" rounded="rounded-[calc(2rem-0.5rem)]" src={SECTION_IMAGES.clinicInterior} /></Core></Shell>
             </Reveal>
           </div>
         </div>
