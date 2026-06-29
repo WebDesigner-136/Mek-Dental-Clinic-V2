@@ -2,6 +2,7 @@ import { Eyebrow, SectionHeader, Shell, Core } from "@/components/Primitives";
 import { LinkButton, RouterButton } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { ImageFrame } from "@/components/ImageFrame";
+import { SERVICE_IMAGES } from "@/lib/images";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ServiceIcon } from "@/components/ServiceIcon";
 import { CLINIC, type Service, SERVICES } from "@/lib/site";
