@@ -179,7 +179,7 @@ function Home() {
             <Reveal key={c.label} delay={i * 0.06}>
               <Shell className="h-full">
                 <Core className="flex h-full flex-col gap-4 p-5">
-                  <ImageFrame label={c.label} iconKey="smile" className="aspect-square" />
+                  <ImageFrame label={c.label} iconKey="smile" className="aspect-square" src={GALLERY_IMAGES[i % GALLERY_IMAGES.length]} />
                   <div className="px-1 pb-1">
                     <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--color-accent-dark)]">{c.category}</p>
                     <p className="mt-1.5 font-display text-base font-semibold">{c.label}</p>
