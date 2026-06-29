@@ -39,7 +39,7 @@ export function BeforeAfterSlider({ label, iconKey = "smile", beforeSrc, afterSr
     >
       {/* AFTER (base layer) */}
       <div className="absolute inset-0">
-        <ImageFrame label={`AFTER · ${label}`} iconKey={iconKey} className="h-full w-full" rounded="rounded-none" />
+        <ImageFrame label={`AFTER · ${label}`} iconKey={iconKey} className="h-full w-full" rounded="rounded-none" src={afterSrc} />
         <span className="absolute right-4 top-4 rounded-full bg-[color:var(--color-accent)] px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white">After</span>
       </div>
       {/* BEFORE (clipped) */}
