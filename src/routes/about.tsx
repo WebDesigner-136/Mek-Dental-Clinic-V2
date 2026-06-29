@@ -4,6 +4,7 @@ import { Eyebrow, SectionHeader, Shell, Core } from "@/components/Primitives";
 import { LinkButton } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { ImageFrame } from "@/components/ImageFrame";
+import { TEAM_IMAGES, INSTAGRAM_IMAGES } from "@/lib/images";
 import { Instagram } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
