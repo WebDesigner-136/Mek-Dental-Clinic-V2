@@ -7,9 +7,11 @@ import type { Service } from "@/lib/site";
 interface Props {
   label: string;
   iconKey?: Service["iconKey"];
+  beforeSrc?: string;
+  afterSrc?: string;
 }
 
-export function BeforeAfterSlider({ label, iconKey = "smile" }: Props) {
+export function BeforeAfterSlider({ label, iconKey = "smile", beforeSrc, afterSrc }: Props) {
   const [pos, setPos] = useState(50);
   const ref = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
