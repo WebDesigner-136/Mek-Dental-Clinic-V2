@@ -65,7 +65,7 @@ function About() {
               <Reveal key={i} delay={i * 0.05}>
                 <Shell className={m.lead ? "ring-1 ring-[color:var(--color-accent)]/30" : ""}>
                   <Core className="flex h-full flex-col gap-4 p-5">
-                    <ImageFrame label={m.name} iconKey="smile" className="aspect-[4/5]" />
+                    <ImageFrame label={m.name} iconKey="smile" className="aspect-[4/5]" src={TEAM_IMAGES[i % TEAM_IMAGES.length]} />
                     <div className="px-1 pb-1">
                       <p className="font-display text-base font-semibold">{m.name}</p>
                       <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-muted-sm)]">{m.role}</p>
