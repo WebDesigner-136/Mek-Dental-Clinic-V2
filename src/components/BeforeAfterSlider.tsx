@@ -44,7 +44,7 @@ export function BeforeAfterSlider({ label, iconKey = "smile", beforeSrc, afterSr
       </div>
       {/* BEFORE (clipped) */}
       <div
-        className="absolute inset-0 overflow-hidden"
+        className="absolute inset-0 overflow-hidden [filter:grayscale(0.55)_brightness(0.85)_contrast(0.95)]"
         style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
       >
         <ImageFrame label={`BEFORE · ${label}`} iconKey={iconKey} className="h-full w-full" rounded="rounded-none" src={beforeSrc} />
