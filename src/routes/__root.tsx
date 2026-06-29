@@ -15,6 +15,9 @@ import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
 import { FloatingActions } from "../components/FloatingActions";
 import { SmoothScroll } from "../components/SmoothScroll";
+import { ScrollToTop } from "../components/ScrollToTop";
+import { PageTransition } from "../components/PageTransition";
+import { SiteLoader } from "../components/SiteLoader";
 import { jsonLdScript } from "../lib/json-ld";
 import { CLINIC } from "../lib/site";
 
@@ -115,9 +118,13 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <SmoothScroll />
+      <ScrollToTop />
+      <SiteLoader />
       <Nav />
       <main className="pt-24 sm:pt-28">
-        <Outlet />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
       </main>
       <Footer />
       <FloatingActions />
