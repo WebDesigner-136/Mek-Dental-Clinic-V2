@@ -10,6 +10,7 @@ import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ImageFrame } from "@/components/ImageFrame";
 import { CountUp } from "@/components/CountUp";
+import { GALLERY_IMAGES, SECTION_IMAGES } from "@/lib/images";
 import heroSmile from "@/assets/hero-smile.png.asset.json";
 
 
@@ -126,7 +127,7 @@ function Home() {
           </div>
           <div className="lg:col-span-5">
             <Reveal delay={0.1}>
-              <Shell><Core><ImageFrame label="Mek Dental Clinic — interior, calm modern space" iconKey="sparkles" className="aspect-[4/5]" rounded="rounded-[calc(2rem-0.5rem)]" /></Core></Shell>
+              <Shell><Core><ImageFrame label="Mek Dental Clinic — interior, calm modern space" iconKey="sparkles" className="aspect-[4/5]" rounded="rounded-[calc(2rem-0.5rem)]" src={SECTION_IMAGES.clinicInterior} /></Core></Shell>
             </Reveal>
           </div>
         </div>
@@ -178,7 +179,7 @@ function Home() {
             <Reveal key={c.label} delay={i * 0.06}>
               <Shell className="h-full">
                 <Core className="flex h-full flex-col gap-4 p-5">
-                  <ImageFrame label={c.label} iconKey="smile" className="aspect-square" />
+                  <ImageFrame label={c.label} iconKey="smile" className="aspect-square" src={GALLERY_IMAGES[i % GALLERY_IMAGES.length]} />
                   <div className="px-1 pb-1">
                     <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--color-accent-dark)]">{c.category}</p>
                     <p className="mt-1.5 font-display text-base font-semibold">{c.label}</p>
@@ -220,7 +221,7 @@ function Home() {
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-5">
             <Reveal>
-              <Shell><Core><ImageFrame label="Dr. Mariana Karam — portrait" iconKey="smile" className="aspect-[4/5]" rounded="rounded-[calc(2rem-0.5rem)]" /></Core></Shell>
+              <Shell><Core><ImageFrame label="Dr. Mariana Karam — portrait" iconKey="smile" className="aspect-[4/5]" rounded="rounded-[calc(2rem-0.5rem)]" src={SECTION_IMAGES.doctorPortrait} /></Core></Shell>
             </Reveal>
           </div>
           <div className="lg:col-span-7">

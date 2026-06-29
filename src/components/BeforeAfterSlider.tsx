@@ -7,9 +7,11 @@ import type { Service } from "@/lib/site";
 interface Props {
   label: string;
   iconKey?: Service["iconKey"];
+  beforeSrc?: string;
+  afterSrc?: string;
 }
 
-export function BeforeAfterSlider({ label, iconKey = "smile" }: Props) {
+export function BeforeAfterSlider({ label, iconKey = "smile", beforeSrc, afterSrc }: Props) {
   const [pos, setPos] = useState(50);
   const ref = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
@@ -37,15 +39,15 @@ export function BeforeAfterSlider({ label, iconKey = "smile" }: Props) {
     >
       {/* AFTER (base layer) */}
       <div className="absolute inset-0">
-        <ImageFrame label={`AFTER · ${label}`} iconKey={iconKey} className="h-full w-full" rounded="rounded-none" />
+        <ImageFrame label={`AFTER · ${label}`} iconKey={iconKey} className="h-full w-full" rounded="rounded-none" src={afterSrc} />
         <span className="absolute right-4 top-4 rounded-full bg-[color:var(--color-accent)] px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white">After</span>
       </div>
       {/* BEFORE (clipped) */}
       <div
-        className="absolute inset-0 overflow-hidden"
+        className="absolute inset-0 overflow-hidden [filter:grayscale(0.55)_brightness(0.85)_contrast(0.95)]"
         style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
       >
-        <ImageFrame label={`BEFORE · ${label}`} iconKey={iconKey} className="h-full w-full" rounded="rounded-none" />
+        <ImageFrame label={`BEFORE · ${label}`} iconKey={iconKey} className="h-full w-full" rounded="rounded-none" src={beforeSrc} />
         <span className="absolute left-4 top-4 rounded-full bg-[color:var(--color-ink)]/80 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white backdrop-blur">Before</span>
       </div>
       {/* Handle */}

@@ -5,6 +5,7 @@ import { Eyebrow, SectionHeader, Shell, Core } from "@/components/Primitives";
 import { LinkButton } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import { GALLERY_IMAGES } from "@/lib/images";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -62,7 +63,10 @@ function Gallery() {
           {filtered.map((c, i) => (
             <Reveal key={`${c.label}-${i}`} delay={(i % 2) * 0.06}>
               <figure>
-                <BeforeAfterSlider label={c.label} iconKey="smile" />
+                {(() => {
+                  const src = GALLERY_IMAGES[GALLERY_CASES.indexOf(c) % GALLERY_IMAGES.length];
+                  return <BeforeAfterSlider label={c.label} iconKey="smile" beforeSrc={src} afterSrc={src} />;
+                })()}
                 <figcaption className="mt-5 flex items-baseline justify-between gap-4">
                   <div>
                     <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--color-accent-dark)]">

@@ -6,6 +6,7 @@ import type { Service } from "@/lib/site";
 import { Shell, Core } from "./Primitives";
 import { ServiceIcon } from "./ServiceIcon";
 import { ImageFrame } from "./ImageFrame";
+import { SERVICE_IMAGES } from "@/lib/images";
 
 export function ServiceCard({ service }: { service: Service }) {
   return (
@@ -19,6 +20,7 @@ export function ServiceCard({ service }: { service: Service }) {
             label={service.imageLabel}
             iconKey={service.iconKey}
             className="aspect-[4/3]"
+            src={SERVICE_IMAGES[service.slug]}
           />
           <div className="flex items-start justify-between gap-3">
             <div className="flex items-center gap-2.5">

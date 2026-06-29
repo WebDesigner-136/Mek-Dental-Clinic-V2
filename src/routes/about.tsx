@@ -4,6 +4,7 @@ import { Eyebrow, SectionHeader, Shell, Core } from "@/components/Primitives";
 import { LinkButton } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { ImageFrame } from "@/components/ImageFrame";
+import { TEAM_IMAGES, INSTAGRAM_IMAGES } from "@/lib/images";
 import { Instagram } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
@@ -64,7 +65,7 @@ function About() {
               <Reveal key={i} delay={i * 0.05}>
                 <Shell className={m.lead ? "ring-1 ring-[color:var(--color-accent)]/30" : ""}>
                   <Core className="flex h-full flex-col gap-4 p-5">
-                    <ImageFrame label={m.name} iconKey="smile" className="aspect-[4/5]" />
+                    <ImageFrame label={m.name} iconKey="smile" className="aspect-[4/5]" src={TEAM_IMAGES[i % TEAM_IMAGES.length]} />
                     <div className="px-1 pb-1">
                       <p className="font-display text-base font-semibold">{m.name}</p>
                       <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-muted-sm)]">{m.role}</p>
@@ -122,7 +123,7 @@ function About() {
             {Array.from({ length: 6 }).map((_, i) => (
               <Reveal key={i} delay={(i % 6) * 0.04}>
                 <div className="group relative aspect-square overflow-hidden rounded-2xl border border-[color:var(--color-hairline)]">
-                  <ImageFrame label="Instagram Post" iconKey="smile" className="h-full w-full" rounded="rounded-none" />
+                  <ImageFrame label="Instagram Post" iconKey="smile" className="h-full w-full" rounded="rounded-none" src={INSTAGRAM_IMAGES[i % INSTAGRAM_IMAGES.length]} />
                   <div className="absolute inset-0 grid place-items-center bg-[color:var(--color-ink)]/0 opacity-0 transition-all duration-500 group-hover:bg-[color:var(--color-ink)]/40 group-hover:opacity-100">
                     <Instagram strokeWidth={1.5} className="h-5 w-5 text-white" />
                   </div>
