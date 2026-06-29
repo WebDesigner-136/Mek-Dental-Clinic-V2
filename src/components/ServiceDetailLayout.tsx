@@ -47,7 +47,7 @@ export function ServiceDetailLayout({ service }: { service: Service }) {
             <Reveal delay={0.1}>
               <Shell>
                 <Core>
-                  <ImageFrame label={service.imageLabel} iconKey={service.iconKey} className="aspect-[4/5]" rounded="rounded-[calc(2rem-0.5rem)]" />
+                  <ImageFrame label={service.imageLabel} iconKey={service.iconKey} className="aspect-[4/5]" rounded="rounded-[calc(2rem-0.5rem)]" src={SERVICE_IMAGES[service.slug]} />
                 </Core>
               </Shell>
             </Reveal>
