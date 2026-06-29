@@ -10,6 +10,7 @@ import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ImageFrame } from "@/components/ImageFrame";
 import { CountUp } from "@/components/CountUp";
+import { GALLERY_IMAGES, SECTION_IMAGES } from "@/lib/images";
 import heroSmile from "@/assets/hero-smile.png.asset.json";
 
 
