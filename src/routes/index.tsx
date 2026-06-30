@@ -10,7 +10,8 @@ import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ImageFrame } from "@/components/ImageFrame";
 import { CountUp } from "@/components/CountUp";
-import { GALLERY_IMAGES, SECTION_IMAGES } from "@/lib/images";
+import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import { CATEGORY_BA, BEFORE_AFTER, SECTION_IMAGES } from "@/lib/images";
 import heroSmile from "@/assets/hero-smile.png.asset.json";
 
 
@@ -174,20 +175,21 @@ function Home() {
         <Reveal>
           <SectionHeader eyebrow="REAL RESULTS" title="A Few of Our Favorite Transformations." />
         </Reveal>
-        <div className="mt-12 grid gap-5 sm:grid-cols-3">
-          {GALLERY_CASES.slice(0, 3).map((c, i) => (
-            <Reveal key={c.label} delay={i * 0.06}>
-              <Shell className="h-full">
-                <Core className="flex h-full flex-col gap-4 p-5">
-                  <ImageFrame label={c.label} iconKey="smile" className="aspect-square" src={GALLERY_IMAGES[i % GALLERY_IMAGES.length]} />
-                  <div className="px-1 pb-1">
+        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          {GALLERY_CASES.slice(0, 3).map((c, i) => {
+            const pair = CATEGORY_BA[c.category] ?? BEFORE_AFTER["hollywood-smile"];
+            return (
+              <Reveal key={c.label} delay={i * 0.06}>
+                <figure>
+                  <BeforeAfterSlider label={c.label} iconKey="smile" beforeSrc={pair.before} afterSrc={pair.after} />
+                  <figcaption className="mt-4 px-1">
                     <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--color-accent-dark)]">{c.category}</p>
                     <p className="mt-1.5 font-display text-base font-semibold">{c.label}</p>
-                  </div>
-                </Core>
-              </Shell>
-            </Reveal>
-          ))}
+                  </figcaption>
+                </figure>
+              </Reveal>
+            );
+          })}
         </div>
         <div className="mt-10 text-center">
           <RouterButton to="/gallery" variant="outline">See the Full Gallery</RouterButton>
