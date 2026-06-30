@@ -23,7 +23,6 @@ import { Route as ServicesOralSurgeryRouteImport } from './routes/services.oral-
 import { Route as ServicesHollywoodSmileRouteImport } from './routes/services.hollywood-smile'
 import { Route as ServicesDentalImplantsRouteImport } from './routes/services.dental-implants'
 import { Route as ServicesBracesRouteImport } from './routes/services.braces'
-import { Route as ServicesAestheticDentistryRouteImport } from './routes/services.aesthetic-dentistry'
 
 const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
   id: '/terms-of-service',
@@ -95,12 +94,6 @@ const ServicesBracesRoute = ServicesBracesRouteImport.update({
   path: '/braces',
   getParentRoute: () => ServicesRoute,
 } as any)
-const ServicesAestheticDentistryRoute =
-  ServicesAestheticDentistryRouteImport.update({
-    id: '/aesthetic-dentistry',
-    path: '/aesthetic-dentistry',
-    getParentRoute: () => ServicesRoute,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -111,7 +104,6 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-of-service': typeof TermsOfServiceRoute
-  '/services/aesthetic-dentistry': typeof ServicesAestheticDentistryRoute
   '/services/braces': typeof ServicesBracesRoute
   '/services/dental-implants': typeof ServicesDentalImplantsRoute
   '/services/hollywood-smile': typeof ServicesHollywoodSmileRoute
@@ -128,7 +120,6 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-of-service': typeof TermsOfServiceRoute
-  '/services/aesthetic-dentistry': typeof ServicesAestheticDentistryRoute
   '/services/braces': typeof ServicesBracesRoute
   '/services/dental-implants': typeof ServicesDentalImplantsRoute
   '/services/hollywood-smile': typeof ServicesHollywoodSmileRoute
@@ -146,7 +137,6 @@ export interface FileRoutesById {
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-of-service': typeof TermsOfServiceRoute
-  '/services/aesthetic-dentistry': typeof ServicesAestheticDentistryRoute
   '/services/braces': typeof ServicesBracesRoute
   '/services/dental-implants': typeof ServicesDentalImplantsRoute
   '/services/hollywood-smile': typeof ServicesHollywoodSmileRoute
@@ -165,7 +155,6 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/terms-of-service'
-    | '/services/aesthetic-dentistry'
     | '/services/braces'
     | '/services/dental-implants'
     | '/services/hollywood-smile'
@@ -182,7 +171,6 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/terms-of-service'
-    | '/services/aesthetic-dentistry'
     | '/services/braces'
     | '/services/dental-implants'
     | '/services/hollywood-smile'
@@ -199,7 +187,6 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/terms-of-service'
-    | '/services/aesthetic-dentistry'
     | '/services/braces'
     | '/services/dental-implants'
     | '/services/hollywood-smile'
@@ -319,18 +306,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesBracesRouteImport
       parentRoute: typeof ServicesRoute
     }
-    '/services/aesthetic-dentistry': {
-      id: '/services/aesthetic-dentistry'
-      path: '/aesthetic-dentistry'
-      fullPath: '/services/aesthetic-dentistry'
-      preLoaderRoute: typeof ServicesAestheticDentistryRouteImport
-      parentRoute: typeof ServicesRoute
-    }
   }
 }
 
 interface ServicesRouteChildren {
-  ServicesAestheticDentistryRoute: typeof ServicesAestheticDentistryRoute
   ServicesBracesRoute: typeof ServicesBracesRoute
   ServicesDentalImplantsRoute: typeof ServicesDentalImplantsRoute
   ServicesHollywoodSmileRoute: typeof ServicesHollywoodSmileRoute
@@ -340,7 +319,6 @@ interface ServicesRouteChildren {
 }
 
 const ServicesRouteChildren: ServicesRouteChildren = {
-  ServicesAestheticDentistryRoute: ServicesAestheticDentistryRoute,
   ServicesBracesRoute: ServicesBracesRoute,
   ServicesDentalImplantsRoute: ServicesDentalImplantsRoute,
   ServicesHollywoodSmileRoute: ServicesHollywoodSmileRoute,
