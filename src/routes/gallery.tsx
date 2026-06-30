@@ -5,7 +5,7 @@ import { Eyebrow, SectionHeader, Shell, Core } from "@/components/Primitives";
 import { LinkButton } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
-import { GALLERY_IMAGES } from "@/lib/images";
+import { CATEGORY_BA, BEFORE_AFTER } from "@/lib/images";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -60,13 +60,12 @@ function Gallery() {
         </Reveal>
 
         <div className="mt-14 grid gap-12 lg:grid-cols-2 lg:gap-x-10 lg:gap-y-20">
-          {filtered.map((c, i) => (
+          {filtered.map((c, i) => {
+            const pair = CATEGORY_BA[c.category] ?? BEFORE_AFTER["hollywood-smile"];
+            return (
             <Reveal key={`${c.label}-${i}`} delay={(i % 2) * 0.06}>
               <figure>
-                {(() => {
-                  const src = GALLERY_IMAGES[GALLERY_CASES.indexOf(c) % GALLERY_IMAGES.length];
-                  return <BeforeAfterSlider label={c.label} iconKey="smile" beforeSrc={src} afterSrc={src} />;
-                })()}
+                <BeforeAfterSlider label={c.label} iconKey="smile" beforeSrc={pair.before} afterSrc={pair.after} />
                 <figcaption className="mt-5 flex items-baseline justify-between gap-4">
                   <div>
                     <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--color-accent-dark)]">
