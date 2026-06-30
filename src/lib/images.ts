@@ -1,30 +1,35 @@
-// Curated Unsplash imagery for the clinic site.
-// All IDs verified reachable on images.unsplash.com.
+// Curated imagery for the clinic site.
+
+import teethWhitening from "@/assets/services/teeth-whitening.jpg.asset.json";
+import hollywoodSmile from "@/assets/services/hollywood-smile.webp.asset.json";
+import oralSurgery from "@/assets/services/oral-surgery.jpg.asset.json";
+import braces from "@/assets/services/braces.jpg.asset.json";
+import dentalImplants from "@/assets/services/dental-implants.jpg.asset.json";
+import periodontics from "@/assets/services/periodontics.jpg.asset.json";
 
 const U = (id: string, w = 1200, h?: number) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80${h ? `&h=${h}` : ""}`;
 
 export const SERVICE_IMAGES: Record<string, string> = {
-  "teeth-whitening": U("1588776814546-1ffcf47267a5"),
-  "hollywood-smile": U("1629909613654-28e377c37b09"),
-  "oral-surgery": U("1606811971618-4486d14f3f99"),
-  "aesthetic-dentistry": U("1612277795421-9bc7706a4a34"),
-  "braces": U("1598256989800-fe5f95da9787"),
-  "dental-implants": U("1609840114035-3c981b782dfe"),
-  "periodontics": U("1571772996211-2f02c9727629"),
+  "teeth-whitening": teethWhitening.url,
+  "hollywood-smile": hollywoodSmile.url,
+  "oral-surgery": oralSurgery.url,
+  "braces": braces.url,
+  "dental-implants": dentalImplants.url,
+  "periodontics": periodontics.url,
 };
 
 // Pool of smile/case photography, cycled across gallery entries.
 export const GALLERY_IMAGES: string[] = [
-  U("1629909613654-28e377c37b09"),
-  U("1588776814546-1ffcf47267a5"),
-  U("1612277795421-9bc7706a4a34"),
-  U("1609840114035-3c981b782dfe"),
-  U("1598256989800-fe5f95da9787"),
+  hollywoodSmile.url,
+  teethWhitening.url,
+  dentalImplants.url,
+  braces.url,
+  oralSurgery.url,
+  periodontics.url,
   U("1576091160550-2173dba999ef"),
   U("1622253692010-333f2da6031d"),
   U("1631815589968-fdb09a223b1e"),
-  U("1606811971618-4486d14f3f99"),
 ];
 
 export const SECTION_IMAGES = {
@@ -41,10 +46,10 @@ export const TEAM_IMAGES: string[] = [
 ];
 
 export const INSTAGRAM_IMAGES: string[] = [
-  U("1588776814546-1ffcf47267a5", 600),
-  U("1629909613654-28e377c37b09", 600),
+  teethWhitening.url,
+  hollywoodSmile.url,
   U("1622253692010-333f2da6031d", 600),
   U("1631815589968-fdb09a223b1e", 600),
   U("1576091160550-2173dba999ef", 600),
-  U("1612277795421-9bc7706a4a34", 600),
+  braces.url,
 ];

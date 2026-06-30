@@ -40,7 +40,7 @@ export type ServiceSlug =
   | "teeth-whitening"
   | "hollywood-smile"
   | "oral-surgery"
-  | "aesthetic-dentistry"
+  
   | "braces"
   | "dental-implants"
   | "periodontics";
@@ -149,32 +149,6 @@ export const SERVICES: Service[] = [
     cta: "Discuss My Surgical Options",
     imageLabel: "Surgery — calm clinical precision instruments",
     iconKey: "scissors",
-  },
-  {
-    slug: "aesthetic-dentistry",
-    name: "Aesthetic Dentistry",
-    short: "Aesthetic Dentistry",
-    benefit: "Subtle, natural cosmetic refinements — bonding, contouring, symmetry.",
-    what: "Conservative cosmetic refinements — bonding, contouring, gum-line aesthetics, and smile-symmetry correction — for patients who want a subtle, natural improvement rather than a full makeover.",
-    benefits: [
-      "Conservative and tooth-preserving",
-      "Natural-looking results",
-      "Quick sessions, often in a single visit",
-    ],
-    process: [
-      "Smile assessment",
-      "Conservative treatment plan",
-      "Same- or few-visit refinement",
-      "Final shaping and polish",
-    ],
-    who: "Minor chips, small gaps, uneven edges, or gum-line asymmetry.",
-    faq: [
-      { q: "Is this less invasive than veneers?", a: "Yes — it's the more conservative, tooth-preserving option." },
-      { q: "How long does it last?", a: "Results are durable with normal care; your dentist will advise on longevity for your specific case." },
-    ],
-    cta: "Refine My Smile",
-    imageLabel: "Aesthetic — subtle smile contouring close-up",
-    iconKey: "wand",
   },
   {
     slug: "braces",
