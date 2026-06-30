@@ -108,6 +108,33 @@ export function ServiceDetailLayout({ service }: { service: Service }) {
         </div>
       </section>
 
+      {/* BEFORE / AFTER */}
+      {BEFORE_AFTER[service.slug] && (
+        <section className="section-pad container-edge">
+          <Reveal>
+            <SectionHeader
+              eyebrow="REAL RESULTS"
+              title={`See the ${service.short.toLowerCase()} difference.`}
+              serif="Drag the handle to reveal the transformation."
+            />
+          </Reveal>
+          <div className="mx-auto mt-12 max-w-3xl">
+            <Reveal delay={0.05}>
+              <BeforeAfterSlider
+                label={`${service.name} — before & after`}
+                iconKey={service.iconKey}
+                beforeSrc={BEFORE_AFTER[service.slug].before}
+                afterSrc={BEFORE_AFTER[service.slug].after}
+              />
+              <p className="mt-4 text-center font-mono text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-muted-sm)]">
+                drag to reveal
+              </p>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
+
       {/* WHO IT'S FOR */}
       <section className="bg-[color:var(--color-canvas-alt)]/60 py-20 sm:py-28">
         <div className="container-edge grid gap-12 lg:grid-cols-12">
