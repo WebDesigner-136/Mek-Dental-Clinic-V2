@@ -79,7 +79,8 @@ function Gallery() {
                 </figcaption>
               </figure>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </section>
 
