@@ -11,6 +11,20 @@ import team2 from "@/assets/team-2.jpg.asset.json";
 import team3 from "@/assets/team-3.jpg.asset.json";
 import teamNada from "@/assets/team-nada.webp.asset.json";
 
+// Before / After generated dental imagery (local bundled assets)
+import baWhiteningBefore from "@/assets/ba/whitening-before.jpg";
+import baWhiteningAfter from "@/assets/ba/whitening-after.jpg";
+import baHollywoodBefore from "@/assets/ba/hollywood-before.jpg";
+import baHollywoodAfter from "@/assets/ba/hollywood-after.jpg";
+import baSurgeryBefore from "@/assets/ba/surgery-before.jpg";
+import baSurgeryAfter from "@/assets/ba/surgery-after.jpg";
+import baBracesBefore from "@/assets/ba/braces-before.jpg";
+import baBracesAfter from "@/assets/ba/braces-after.jpg";
+import baImplantBefore from "@/assets/ba/implant-before.jpg";
+import baImplantAfter from "@/assets/ba/implant-after.jpg";
+import baPerioBefore from "@/assets/ba/perio-before.jpg";
+import baPerioAfter from "@/assets/ba/perio-after.jpg";
+
 const U = (id: string, w = 1200, h?: number) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80${h ? `&h=${h}` : ""}`;
 
@@ -23,17 +37,37 @@ export const SERVICE_IMAGES: Record<string, string> = {
   "periodontics": periodontics.url,
 };
 
+export interface BeforeAfterPair {
+  before: string;
+  after: string;
+}
+
+export const BEFORE_AFTER: Record<string, BeforeAfterPair> = {
+  "teeth-whitening": { before: baWhiteningBefore, after: baWhiteningAfter },
+  "hollywood-smile": { before: baHollywoodBefore, after: baHollywoodAfter },
+  "oral-surgery": { before: baSurgeryBefore, after: baSurgeryAfter },
+  "braces": { before: baBracesBefore, after: baBracesAfter },
+  "dental-implants": { before: baImplantBefore, after: baImplantAfter },
+  "periodontics": { before: baPerioBefore, after: baPerioAfter },
+};
+
+// Map gallery category labels → a before/after pair.
+export const CATEGORY_BA: Record<string, BeforeAfterPair> = {
+  "Whitening": BEFORE_AFTER["teeth-whitening"],
+  "Hollywood Smile": BEFORE_AFTER["hollywood-smile"],
+  "Smile Makeover": BEFORE_AFTER["hollywood-smile"],
+  "Implants": BEFORE_AFTER["dental-implants"],
+  "Braces": BEFORE_AFTER["braces"],
+};
+
 // Pool of smile/case photography, cycled across gallery entries.
 export const GALLERY_IMAGES: string[] = [
-  hollywoodSmile.url,
-  teethWhitening.url,
-  dentalImplants.url,
-  braces.url,
-  oralSurgery.url,
-  periodontics.url,
-  U("1576091160550-2173dba999ef"),
-  U("1622253692010-333f2da6031d"),
-  U("1631815589968-fdb09a223b1e"),
+  baHollywoodAfter,
+  baWhiteningAfter,
+  baImplantAfter,
+  baBracesAfter,
+  baSurgeryAfter,
+  baPerioAfter,
 ];
 
 export const SECTION_IMAGES = {
@@ -50,10 +84,10 @@ export const TEAM_IMAGES: string[] = [
 ];
 
 export const INSTAGRAM_IMAGES: string[] = [
-  teethWhitening.url,
-  hollywoodSmile.url,
-  U("1622253692010-333f2da6031d", 600),
-  U("1631815589968-fdb09a223b1e", 600),
-  U("1576091160550-2173dba999ef", 600),
-  braces.url,
+  baHollywoodAfter,
+  baWhiteningAfter,
+  baBracesAfter,
+  baImplantAfter,
+  baPerioAfter,
+  baSurgeryAfter,
 ];
