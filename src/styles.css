@@ -224,16 +224,23 @@
 }
 
 @keyframes hero-breathe {
-  0%, 100% { transform: scale(1.02); filter: brightness(0.95); }
-  50% { transform: scale(1.06); filter: brightness(1.05); }
+  0%, 100% { transform: scale(1.02); filter: brightness(0.88) saturate(1.02); }
+  50% { transform: scale(1.05); filter: brightness(0.95) saturate(1.05); }
+}
+
+@keyframes hero-reveal {
+  0% { opacity: 0; transform: scale(1.12); filter: brightness(0.6) saturate(0.85) blur(6px); }
+  100% { opacity: 1; transform: scale(1.02); filter: brightness(0.88) saturate(1.02) blur(0); }
 }
 
 .hero-image-breathe {
-  animation: hero-breathe 14s cubic-bezier(0.32, 0.72, 0, 1) infinite;
+  animation: hero-reveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) both,
+             hero-breathe 18s cubic-bezier(0.32, 0.72, 0, 1) 1.6s infinite;
   transform-origin: center;
-  will-change: transform, filter;
+  will-change: transform, filter, opacity;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-image-breathe { animation: none; }
 }
+
