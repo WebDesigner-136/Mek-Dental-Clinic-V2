@@ -48,11 +48,23 @@ function Home() {
                 "linear-gradient(90deg, rgba(20,20,22,0.78) 0%, rgba(20,20,22,0.55) 40%, rgba(20,20,22,0.15) 70%, rgba(20,20,22,0) 100%)",
             }}
           />
+          {/* Readability gradient overlay — deepens ink for text without touching image tone */}
           <div
-            className="absolute -left-40 top-1/3 h-[420px] w-[420px] rounded-full opacity-25 blur-3xl"
-            style={{ background: "radial-gradient(circle at 50% 50%, #6d767d 0%, transparent 60%)" }}
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(20,20,22,0.82) 0%, rgba(20,20,22,0.58) 42%, rgba(20,20,22,0.18) 72%, rgba(20,20,22,0.05) 100%)",
+            }}
           />
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[color:var(--color-canvas)] to-transparent" />
+          {/* Subtle top-to-bottom vignette to remove any hot highlight bleeding into the nav */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(20,20,22,0.35) 0%, rgba(20,20,22,0) 22%, rgba(20,20,22,0) 78%, rgba(20,20,22,0.35) 100%)",
+            }}
+          />
+
         </div>
 
         <div className="container-edge relative flex min-h-[100dvh] flex-col justify-center pb-24 pt-32 text-white sm:pt-36">

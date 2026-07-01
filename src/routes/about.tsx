@@ -4,7 +4,7 @@ import { Eyebrow, SectionHeader, Shell, Core } from "@/components/Primitives";
 import { LinkButton } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { ImageFrame } from "@/components/ImageFrame";
-import { TEAM_IMAGES, INSTAGRAM_IMAGES } from "@/lib/images";
+import { TEAM_IMAGES, INSTAGRAM_POSTS } from "@/lib/images";
 import { Instagram } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
@@ -114,23 +114,30 @@ function About() {
               serif="The day-to-day of the clinic — patients, results, and behind-the-scenes."
             />
           </Reveal>
-          <a
-            href={CLINIC.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6"
-          >
-            {Array.from({ length: 6 }).map((_, i) => (
-              <Reveal key={i} delay={(i % 6) * 0.04}>
-                <div className="group relative aspect-square overflow-hidden rounded-2xl border border-[color:var(--color-hairline)]">
-                  <ImageFrame label="Instagram Post" iconKey="smile" className="h-full w-full" rounded="rounded-none" src={INSTAGRAM_IMAGES[i % INSTAGRAM_IMAGES.length]} />
-                  <div className="absolute inset-0 grid place-items-center bg-[color:var(--color-ink)]/0 opacity-0 transition-all duration-500 group-hover:bg-[color:var(--color-ink)]/40 group-hover:opacity-100">
-                    <Instagram strokeWidth={1.5} className="h-5 w-5 text-white" />
+          <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {INSTAGRAM_POSTS.map((post, i) => (
+              <Reveal key={post.url} delay={(i % 6) * 0.04}>
+                <a
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View Instagram post ${i + 1} by @dr.marianakaram`}
+                  className="group relative block aspect-square overflow-hidden rounded-2xl border border-[color:var(--color-hairline)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-accent)] focus-visible:ring-offset-2"
+                >
+                  <img
+                    src={post.image}
+                    alt={`Instagram post ${i + 1} by Dr. Mariana Karam`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.06]"
+                  />
+                  <div className="absolute inset-0 grid place-items-center bg-[color:var(--color-ink)]/0 opacity-0 transition-all duration-500 group-hover:bg-[color:var(--color-ink)]/45 group-hover:opacity-100">
+                    <Instagram strokeWidth={1.5} className="h-6 w-6 text-white" />
                   </div>
-                </div>
+                </a>
               </Reveal>
             ))}
-          </a>
+          </div>
+
           <div className="mt-10 text-center">
             <LinkButton href={CLINIC.instagram} target="_blank" rel="noopener noreferrer" variant="outline">
               Follow @dr.marianakaram

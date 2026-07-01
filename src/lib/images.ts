@@ -83,11 +83,29 @@ export const TEAM_IMAGES: string[] = [
   team3.url,
 ];
 
-export const INSTAGRAM_IMAGES: string[] = [
-  baHollywoodAfter,
-  baWhiteningAfter,
-  baBracesAfter,
-  baImplantAfter,
-  baPerioAfter,
-  baSurgeryAfter,
+// Real Instagram posts from @dr.marianakaram. Thumbnails are bundled locally
+// (Instagram CDN URLs are signed & short-lived, so hotlinking is not viable).
+import igC1 from "@/assets/instagram/C-kvlVBscrV.jpg";
+import igC2 from "@/assets/instagram/C17kQassxeH.jpg";
+import igC3 from "@/assets/instagram/C8uVQ7oMjxH.jpg";
+import igC4 from "@/assets/instagram/C8KUirys-gK.jpg";
+import igC5 from "@/assets/instagram/C8XHQuCMSr9.jpg";
+import igC6 from "@/assets/instagram/C9e6id7sW3G.jpg";
+
+export interface InstagramPost {
+  url: string;
+  image: string;
+}
+
+export const INSTAGRAM_POSTS: InstagramPost[] = [
+  { url: "https://www.instagram.com/p/C-kvlVBscrV/", image: igC1 },
+  { url: "https://www.instagram.com/p/C17kQassxeH/", image: igC2 },
+  { url: "https://www.instagram.com/p/C8uVQ7oMjxH/", image: igC3 },
+  { url: "https://www.instagram.com/p/C8KUirys-gK/", image: igC4 },
+  { url: "https://www.instagram.com/p/C8XHQuCMSr9/", image: igC5 },
+  { url: "https://www.instagram.com/p/C9e6id7sW3G/", image: igC6 },
 ];
+
+// Back-compat: image list for anywhere still reading INSTAGRAM_IMAGES.
+export const INSTAGRAM_IMAGES: string[] = INSTAGRAM_POSTS.map((p) => p.image);
+
